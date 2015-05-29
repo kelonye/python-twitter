@@ -23,6 +23,7 @@ import ptwitter as twitter
 twitter.consumer_key = 'consumer_key'
 twitter.consumer_secret = 'consumer_secret'
 
+token = ''
 url = twitter.build(url, token)
 response = urllib2.urlopen(url)
 print response.read()
@@ -31,7 +32,7 @@ print response.read()
 
 ## Test
 
-    $ make deps test
+    $ make test
 
 ## License
 

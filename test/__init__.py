@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import unittest
-from urllib2 import urlopen
-
+import urllib2
 import sys
 import os
+import json
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import lib as twitter
@@ -18,8 +18,9 @@ class Test(unittest.TestCase):
     def test_get(self):
 
         token = ''
-        url = '/account/verify_credentials.json'
-        print 'open in browser ' + twitter.build(url, token)
+        url = twitter.build('/account/verify_credentials.json', token)
+        response = urllib2.urlopen(url)
+        print json.dumps(json.loads(response.read()), indent=2)
 
 
 if __name__ == '__main__':
