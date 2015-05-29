@@ -1,0 +1,4 @@
+*.pyc
+build/
+ptwitter.egg-info/
+dist
