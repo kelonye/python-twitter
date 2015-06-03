@@ -36,7 +36,7 @@ def build(http_url, token, http_method='GET'):
             match.group(2)
         )
     except Exception:
-        raise InvalidAccessToken('The provided access token is invalid.')
+        raise InvalidAccessToken('the provided access token is invalid.')
     
     url = BASE_API_URI + http_url
 

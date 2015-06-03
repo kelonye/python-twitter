@@ -24,7 +24,8 @@ twitter.consumer_key = 'consumer_key'
 twitter.consumer_secret = 'consumer_secret'
 
 token = ''
-url = twitter.build(url, token)
+resource = '/account/verify_credentials.json'
+url = twitter.build(resource, token)
 response = urllib2.urlopen(url)
 print response.read()
 
